@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include 'config/database.php';
+include 'config/koneksi.php';
 if (isset($_POST['save'])) {
   $db = new Database();
   $email = $_POST['email'];
@@ -96,7 +96,8 @@ if (isset($_POST['save'])) {
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <button class="btn btn-primary px-4" name="save" type="submit">Login</button>
+                    <button class="btn btn-primary px-4" name="save" type="submit">
+                    <i class="icon-login"></i> Login</button>
                   </div>
                   <!-- <div class="col-6 text-right">
                     <button class="btn btn-link px-0" type="button">Forgot password?</button>

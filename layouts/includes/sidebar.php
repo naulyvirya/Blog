@@ -16,7 +16,7 @@
               <a class="nav-link" href="/admin/artikel">
                 <i class="nav-icon icon-pencil"></i> Artikel</a>
             </li>
-            <li class="nav-title">Components</li>
+            <!-- <li class="nav-title">Components</li>
             <li class="nav-item nav-dropdown">
               <a class="nav-link nav-dropdown-toggle" href="#">
                 <i class="nav-icon icon-puzzle"></i> Base</a>
@@ -181,7 +181,7 @@
                     <i class="nav-icon icon-star"></i> Error 500</a>
                 </li>
               </ul>
-            </li>
+            </li> -->
         
           </ul>
         </nav>

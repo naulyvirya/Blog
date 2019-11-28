@@ -1,46 +1,30 @@
-<?php
-session_start();
-if (!$_SESSION['login']) {
-  echo "<script type='text/javascript'>
-    alert('Maaf Anda harus Login Terlebih Dahulu!');
-        window.location = '/login.php'
-  </script>";
-} else {
-  include ('../config/database.php');
-  $user = new Database();
-  $user = mysqli_query($user->koneksi,
-  "select * from users where password='$_SESSION[login]");
-  $user = mysqli_fetch_array($user);
-?>
-<!-- Header -->
-<?php include('../layouts/includes/head.php'); ?>
-<!-- End Header -->
-
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    <!-- Navbar  -->
-    <?php include('../layouts/includes/navbar.php'); ?>
-    <!-- End Navbar -->
-
-    <div class="app-body">
-      <!-- Sidebar -->
-      <?php include('../layouts/includes/sidebar.php'); ?>
-      <!-- End Sidebar -->
 
       <!-- Main Content -->
       <main class="main">
-
+          <div class="modal fade kategori" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                      <form action="/admin/kategori/proses.php?aksi=create" method="post">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kategori</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <div class="form-group">
+                                  <label>Nama Kategori</label>
+                                  <input type="text" name="nama" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              <button type="reset" class="btn btn-warning">Reset</button>
+                              <button type="submit" name="save" class="btn btn-block btn-primary">Save</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
       </main>
       <!-- End Main Content -->
-    </div>
-    
-    <?php include('../layouts/includes/footer.php'); ?>
-    <!-- CoreUI and necessary plugins-->
-    <!-- Scripts -->
-    <?php include('../layouts/includes/scripts.php'); ?>
-    <!-- End Scripts -->
-  </body>
-</html>
-<?php
-
-}
-?>

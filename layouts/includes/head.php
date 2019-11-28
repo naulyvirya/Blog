@@ -40,4 +40,7 @@
       // Bootstrap ID
       gtag('config', 'UA-118965717-5');
     </script>
+    <!-- Datatable -->
+    <link rel="stylesheet" href="/assets/DataTables/datatables.min.css">
+    <!-- End Datatable -->
   </head>
