@@ -34,7 +34,9 @@ class Artikel extends Database
     {
         $data_artikel = mysqli_query(
             $this->koneksi,
-            "SELECT * FROM artikel WHERE id = '$id'"
+            "SELECT artikel.id, artikel.judul, artikel.foto, artikel.konten, artikel.tgl, artikel.slug, kategori.nama as
+            nama_kategori, users.nama as nama_penulis FROM ((artikel JOIN kategori ON kategori.id = artikel.id_kategori)
+            JOIN users ON users.id = artikel.id_user) where artikel.id = '$id'" 
         );
         return $data_artikel;
     }
@@ -55,7 +57,7 @@ class Artikel extends Database
         mysqli_query(
             $this->koneksi,
             "UPDATE artikel SET judul='$judul', slug='$slug', konten='$konten', foto='$foto', tgl='$tgl',
-            id_user='$id_user', id_kategori='$id_kategori' WHERE id='$id"
+            id_user='$id_user', id_kategori='$id_kategori' WHERE id='$id'"
         );
     }
 

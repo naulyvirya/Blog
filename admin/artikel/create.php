@@ -8,9 +8,6 @@ if (!$_SESSION['login']) {
 } else {
   include ('../../config/koneksi.php');
   $user = new Database();
-  $user = mysqli_query($user->koneksi,
-  "select * from users where password='$_SESSION[login]'");
-  $user = mysqli_fetch_array($user);
 ?>
 <!-- Header -->
 <?php include('../../layouts/includes/head.php'); ?>
@@ -80,7 +77,6 @@ if (!$_SESSION['login']) {
                                   </select>
                               </div>
                               <div class="form-group">
-                                  <input type="hidden" name="id_user" value="<?php echo $user['id'] ?>">
                                   <button type="submit" name="save" class="btn btn-primary btn-block">Simpan Data</button>
                               </div>
                           </form>

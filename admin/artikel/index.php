@@ -79,8 +79,8 @@ if (!$_SESSION['login']) {
                             <td><img src="/admin/artikel/img/<?php echo $data['foto']; ?>" alt="" style="width:75px; height:50px;"></td>
                             <td>
                               <a href="/admin/artikel/proses.php?id=<?php echo $data['id']; ?>&aksi=delete" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin ?')">Delete</a> |
-                              <a href="/admin/artikel/show.php?id=<?php echo $data['id']; ?>" class="btn btn-sm btn-warning">Show</a> |
-                              <a href="/admin/artikel/edit.php?id=<?php echo $data['id']; ?>" class="btn btn-sm btn-success">Edit</a>
+                              <a href="/admin/artikel/edit.php?id=<?php echo $data['id']; ?>" class="btn btn-sm btn-warning">Edit</a> |
+                              <a href="/admin/artikel/show.php?id=<?php echo $data['id']; ?>" class="btn btn-sm btn-success">Show</a> 
                             </td>
                         </tr>
                           <?php } ?>
